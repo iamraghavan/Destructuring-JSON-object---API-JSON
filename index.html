@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+
+        let pincodeValue = '600005';
+        let pincodeAPIkey = '77263240-8518-11ed-af9f-5f1ff8feea0d';
+        $.getJSON(`https://app.zipcodebase.com/api/v1/search?apikey=${pincodeAPIkey}&codes=${pincodeValue}`)
+        .then((response) => {
+            // console.log(response);
+            let destructureResult = response.results;
+            let convertJSONResult = JSON.stringify(destructureResult);
+    
+           console.log(convertJSONResult);
+        });
+    </script>
+
+</body>
+</html>
